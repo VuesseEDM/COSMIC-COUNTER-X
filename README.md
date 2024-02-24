@@ -22,13 +22,13 @@
 
 📂 ```Folder Structure```   
 
-|--📁assets        
-|--|--✨styles  
-|--|--📃document     
-|--|--🌈video 
+|--📁assets          
+|--|--✨styles    
+|--|--📃document       
+|--|--🌈video   
 |--|--⚙️js            
-|--📖README.md     
-|--🌐index.html      
+|--📖README.md       
+|--🌐index.html         
 ---
 
  ## ⤵️  Preview Devices  
@@ -46,8 +46,7 @@
 - ```HTML5 e CSS3```: For the structure and style of my portfolio.
 
 
-- ```JavaScript```: To add interactivity and dynamism.
-- 
+- ```JavaScript```: To add interactivity and dynamism.  
 
 
   
