@@ -45,10 +45,9 @@
 - ```HTML5 e CSS3```: For the structure and style of my portfolio.
 
 
-- ```JavaScript```: To add interactivity and dynamism. 
+- ```JavaScript```: To add interactivity and dynamism.
+- 
 
-
-- ```FontAwesome```: For eye-catching and high-quality icons.
 
   
  - ```Bootstrap```:  To add that extra style and speed up development.
