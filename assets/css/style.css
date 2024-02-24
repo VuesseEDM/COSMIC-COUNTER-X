@@ -1,0 +1,542 @@
+@import url('https://fonts.cdnfonts.com/css/gorefont');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'GoreFont', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#title {
+  text-align: center;
+  font-size: 10vh;
+  color: white;
+  text-shadow: 10px 12px black;
+  margin-bottom: 60px;
+}
+
+#bestTime {
+  font-size: 3vh;
+  color: white;
+  text-shadow: 1px 3px white;
+  margin-bottom: 10px;
+  background: conic-gradient(from 30deg, rgb(1, 212, 236), rgb(236, 229, 1), black, rgb(255, 132, 0));
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rotateColors 3s cubic-bezier(0.25, 0.46, 0.45, 0.14) infinite, moveColors 3s cubic-bezier(0.25, 0.46, 0.45, 0.14) infinite alternate;
+  background-size: 250% 250%;
+}
+
+#bestTime:hover {
+  transform: scale(0.96);
+  transition: transform 0.2s ease-in-out;
+  text-shadow: none;
+}
+
+@keyframes rotateColors {
+  0% {
+    background-position: 0deg;
+  }
+
+  100% {
+    background-position: 360deg;
+  }
+}
+
+@keyframes moveColors {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+
+
+}
+
+#videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(40, 0, 0, 0.133);
+  padding: 15px 160px;
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+}
+
+.displayNumberBox {
+  z-index: 10;
+  padding: 7px;
+}
+
+#displayNumber {
+  font-size: 11vh;
+  z-index: 10;
+  color: white;
+  text-shadow: 10px 12px black;
+}
+
+
+.buttonsContainer {
+  margin: 2px 0;
+  z-index: 10;
+}
+
+
+#segnoPiu {
+  font-size: 25px;
+  padding: 26px;
+  margin: 7px;
+  background-color: rgb(236, 229, 1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  color: black;
+  text-shadow: 1px 4px white;
+}
+
+#segnoPiu:hover {
+  background-color: rgb(1, 212, 236);
+  z-index: 10;
+  opacity: 0.95;
+}
+
+#segnoPiu:active {
+  background-color: #1efffb;
+  z-index: 10;
+  transform: scale(0.95);
+}
+
+#segnoMeno {
+  font-size: 25px;
+  padding: 26px;
+  margin: 7px;
+  background-color: rgb(236, 229, 1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  color: black;
+  text-shadow: 1px 4px white;
+}
+
+#segnoMeno:hover {
+  background-color: rgb(1, 212, 236);
+  z-index: 10;
+  opacity: 0.95;
+}
+
+#segnoMeno:active {
+  background-color: #1efffb;
+  z-index: 10;
+  transform: scale(0.95);
+}
+
+.resetButtonBox {
+  margin-top: 0 auto;
+  z-index: 10;
+}
+
+.timerButtonBox {
+  z-index: 10;
+  text-align: center;
+}
+
+#resetButton {
+  background-color: rgb(177, 0, 142);
+  padding: 15px 25px;
+  margin: 20px 0;
+  text-shadow: 0 0 white;
+}
+
+#resetButton:hover {
+  opacity: 0.85;
+  box-shadow: 0 0 10px 0 rgba(236, 229, 1);
+}
+
+#resetButton:active {
+  transform: scale(0.95);
+}
+
+#timerButton {
+  padding: 25px 40px;
+  font-size: 22px;
+  background-color: rgb(1, 212, 236);
+  text-shadow: 1px 1px white;
+}
+
+#timerButton:hover {
+  opacity: 0.85;
+  box-shadow: 0 0 10px 0 rgb(177, 0, 142);
+}
+
+#timerButton:active {
+  transform: scale(0.95);
+}
+
+#timerDisplay {
+  text-align: center;
+  font-size: 3.5vh;
+  margin-top: 33px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+#boxRegola {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+#regola {
+  font-size: 3vh;
+  padding: 15px 20px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+  text-shadow: 1px 2px rgb(177, 0, 142);
+  background-color: black;
+}
+
+#regola:hover {
+  opacity: 0.8;
+  background-color: white;
+  text-shadow: 1px 2px rgb(177, 0, 142);
+  color: black;
+  box-shadow: 0 0 10px 0 rgba(236, 229, 1);
+}
+
+#regola:active {
+  transform: scale(1.2);
+  background-color: rgb(236, 229, 1);
+  text-shadow: 1px 2px black;
+  color: rgb(177, 0, 142);
+}
+
+#mostraRegola {
+  font-size: 3vh;
+  text-align: center;
+  color: white;
+  display: none;
+  margin-bottom: 10px;
+}
+
+#mostraRegola:hover {
+  transform: scale(0.96);
+  transition: transform 0.2s ease-in-out;
+}
+
+@keyframes rotateColors {
+  0% {
+    background-position: 0deg;
+  }
+
+  100% {
+    background-position: 360deg;
+  }
+}
+
+@keyframes moveColors {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+
+
+}
+
+
+/* Media query per dispositivi mobili */
+@media only screen and (max-width: 500px) {
+
+  #title {
+    font-size: 10vw;
+    margin-top: -70px;
+    margin-bottom: 22px;
+  }
+
+  #bestTime {
+    font-size: 4vw;
+    max-width: 80%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    padding: 62px 60px;
+  }
+
+  #video {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  #displayNumber {
+    font-size: 13vw;
+    margin-top: -20px;
+  }
+
+  #segnoPiu,
+  #segnoMeno {
+    font-size: 5vw;
+    padding: 17px 25px;
+  }
+
+  #timerButton {
+    padding: 15px 30px;
+    font-size: 5vw;
+  }
+
+  #resetButton {
+    padding: 10px 25px;
+    font-size: 5vw;
+  }
+
+  #timerDisplay {
+    font-size: 6.7vw;
+    margin-top: 20px;
+    margin-bottom: -33px;
+  }
+
+  #videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+  }
+
+  #boxRegola {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin-top: -5px;
+  }
+
+  #regola {
+    font-size: 2.3vh;
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+    color: white;
+    text-shadow: 1px 2px rgb(177, 0, 142);
+    background-color: black;
+  }
+
+  #mostraRegola {
+    font-size: 2vh;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 3px black;
+  }
+
+
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1024px) {
+  #title {
+    font-size: 8vw;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  #bestTime {
+    margin-top: 7px;
+    font-size: 2.4vw;
+    max-width: 550px;
+    text-align: center;
+    margin-bottom: 40px
+  }
+
+  .container {
+    padding: 10px 100px;
+  }
+
+  #displayNumber {
+    font-size: 7vw;
+    margin-bottom: 10px;
+  }
+
+  #segnoPiu,
+  #segnoMeno {
+    font-size: 5vw;
+    padding: 10px 17px;
+  }
+
+  #timerButton {
+    padding: 12px 20px;
+    font-size: 3vw;
+  }
+
+  #resetButton {
+    padding: 8px 15px;
+    font-size: 3vw;
+  }
+
+  #timerDisplay {
+    font-size: 4vw;
+    margin-top: 10px;
+  }
+
+  #videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    z-index: -1;
+  }
+
+  #video {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  #boxRegola {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 530px;
+  }
+
+  #regola {
+    font-size: 2vh;
+    padding: 8px 10px;
+    text-align: center;
+    margin: 5px;
+    color: white;
+    color: white;
+    text-shadow: 1px 2px rgb(177, 0, 142);
+    background-color: black;
+  }
+
+  #mostraRegola {
+    font-size: 2vh;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 3px black;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+  #title {
+    font-size: 5vw;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  #bestTime {
+    font-size: 1.5vw;
+    margin-bottom: 30px;
+  }
+
+  #video {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  #displayNumber {
+    font-size: 5vw;
+    margin-bottom: 20px;
+  }
+
+  #segnoPiu,
+  #segnoMeno {
+    font-size: 4vw;
+    padding: 7px 25px;
+  }
+
+  #timerButton {
+    padding: 10px 30px;
+    font-size: 3vw;
+  }
+
+  #resetButton {
+    padding: 7px 25px;
+    font-size: 2vw;
+  }
+
+  #timerDisplay {
+    font-size: 2.5vw;
+    margin-top: 20px;
+  }
+
+  #videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    z-index: -1;
+  }
+
+  #boxRegola {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+  }
+
+  #regola {
+    font-size: 2.1vh;
+    padding: 8px 10px;
+    text-align: center;
+    margin: 5px;
+    color: white;
+    color: white;
+    text-shadow: 1px 2px rgb(177, 0, 142);
+    background-color: black;
+  }
+
+  #mostraRegola {
+    font-size: 1.9vh;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 3px black;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--OG-->
+  <meta name="description" content="Hi, I'm Vincenzo Sorrentino and this is my first JavaScript Project">
+  <meta property="og:title" content="COSMIC COUNTER - Alien VS You ">
+  <meta property="og:type" content="Alien Minigame">
+  <meta property="og:description"
+    content="Hi, I'm Vincenzo Sorrentino, and this is my first mini-game using JavaScript">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="COSMIC COUNTER GAME">
+  <meta property="og:url" content="">
+
+
+  <title>COSMIC COUNTER: Defeat the aliens in this 'click' challenge!"</title>
+
+
+  <!--STYLE-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--FAVICON-->
+  <link rel="icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjCY7Z6uQ_EHzLWMIb-0-Wb91SX5NadKcFGA&usqp=CAU"
+    type="image/x-icon">
+  <link rel="shortcut icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjCY7Z6uQ_EHzLWMIb-0-Wb91SX5NadKcFGA&usqp=CAU"
+    type="image/x-icon">
+
+  <!--FONTS-->
+  <link href="https://fonts.cdnfonts.com/css/gorefont" rel="stylesheet">
+
+  <!--ANIMATION-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+
+  <h1 class="animate__animated animate__bounceInDown" id="title">COSMIC COUNTER</h1>
+  <div class="animate__animated animate__bounceInUp" id="bestTime">NO BETTER TIME...</div>
+  <video id="video" autoplay muted loop>
+    <source src="assets/video/fuoco alieno.mp4" type=" video/mp4" alt="cibo alieno">
+    Your browser does not support the video tag.
+  </video>
+  <!--COSMIC COUNTER-->
+  <div class="container animate__animated animate__backInDown">
+    <img id="videoBackground" src="assets/video/giphy.webp" alt="alien dance" title="alien dance">
+
+
+    <div class="displayNumberBox">
+      <p id="displayNumber">0</p>
+    </div>
+
+    <div class="buttonsContainer">
+      <button id="segnoPiu">+</button>
+      <button id="segnoMeno">-</button>
+    </div>
+    <div class="resetButtonBox">
+      <button id="resetButton">
+        RESET
+      </button>
+    </div>
+    <div class="timerButtonBox">
+      <button id="timerButton">
+        GO TIMER
+      </button>
+      <p id="timerDisplay"></p>
+    </div>
+  </div>
+
+  <!--RULE-->
+  <div id="boxRegola">
+    <button class="animate__animated animate__bounceInUp" id="regola">ONE RULE</button>
+    <div id="mostraRegola">
+      "The only rule is to make 100 clicks within 15 seconds. The best time will be shown at the top."
+    </div>
+  </div>
+
+
+  <!--AUDIO-->
+  <audio id="musica" src="assets/audio/tema.mp3" autoplay loop></audio>
+  <audio id="audioGoTimer" src="assets/audio/clock.mp3"></audio>
+  <audio id="piuSound" src="assets/audio/-.wav"></audio>
+  <audio id="menoSound" src="assets/audio/+.wav"></audio>
+  <audio id="resetBtn" src="assets/audio/reset.mp3"></audio>
+  <audio id="timeUpSound" src="assets/audio/stopGioco.mp3"></audio>
+  <audio id="victorySound" src="assets/audio/vittoria.mp3"></audio>
+  <audio id="regolaSound" src="assets/audio/regola.mp3"></audio>
+
+
+
+  <!--JS-->
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
