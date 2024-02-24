@@ -32,7 +32,7 @@
 
  ## ⤵️  Preview  
 
-![PREVIEW]()   
+![PREVIEW](https://raw.githubusercontent.com/VuesseEDM/COSMIC-COUNTER-X/main/assets/document/copertina.png)   
  🔧**How I Built Cosmic Counter X** 
 ---
 *Tools and Technologies Used*
