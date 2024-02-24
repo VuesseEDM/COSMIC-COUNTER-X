@@ -6,7 +6,8 @@
 
 *This is my first mini-game with Javascript!* 🚀     
 👉 [Introduction](https://github.com/VuesseEDM/COSMIC-COUNTER-X/blob/main/assets/document/Progetto%20JavaScript%20Basics%20di%20Vincenzo%20Sorrentino.pdf)    
-👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)    
+👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)       
+👉 [Netlify](https://65da5ad861370c41ff87c7e7--cosmic-counter-x.netlify.app/)
 
 *RULES OF THE GAME* 📖    
  ```To win, you must make 100 clicks within 15 seconds. The best result will be displayed at the top. You can make 100 clicks and win, but in this case, the result will not be recorded and displayed as the best time.```
@@ -86,7 +87,7 @@
 🌐 **Contacts**  
 ---
 
-- **LinkedIn**  : https://LinkedIn.com/VuesseEDM
+- **LinkedIn**  : https://www.linkedin.com/in/vincenzo-sorrentino-2496052b6
 
 - **GitHub**  : https://github.com/VuesseEDM
 
