@@ -89,7 +89,7 @@
 
 - **LinkedIn**  : https://www.linkedin.com/in/vincenzo-sorrentino-2496052b6
 
-- **GitHub**  : https://github.com/VuesseEDM
+- **Instagram**  : https://www.instagram.com/vuesse_edm/
 
 - **Email**  : vuesse2impact@gmail.com
 ---
