@@ -1,37 +1,39 @@
-# COSMIC-COUNTER-X
 
 
-# PORTFOLIO OF VINCENZO SORRENTINO 👽 
+👽 # COSMIC-COUNTER-X 👽 
 ---
  
 
+*This is my first mini-game with Javascript!* 🚀     
+👉 [PDF]()    
+👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)    
 
+*RULES OF THE GAME* 📖    
+ ```To win, you must make 100 clicks within 15 seconds. The best result will be displayed at the top. You can make 100 clicks and win, but in this case, the result will not be recorded and displayed as the best time.```
 
-*Welcome to my Personal Portfolio!* 🚀     
-👉 [PDF](https://github.com/VuesseEDM/PORTFOLIO-PROJECT/blob/main/assets/documents/Portfolio.pdf)    
-👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)      
+ 
 
+##  STAY ALERT  🙌
 
+- "Note: To listen to the theme music, ensure that the necessary permissions are granted in your preferred browser.  
+  Then check the audio permission and set it to allow."
 
 
 📂 ```Folder Structure```   
 
-|--📁assets  
+|--📁assets        
+|--|--✨styles  
 |--|--📃document     
-|--|--🌈images       
-|--|--✨styles      
-|--|--🪶fonts   
+|--|--🌈video 
 |--|--⚙️js            
 |--📖README.md     
 |--🌐index.html      
-|--🌐projects.html     
-|--🌐cv.html 
 ---
 
  ## ⤵️  Preview  
 
-![PREVIEW](https://github.com/VuesseEDM/PORTFOLIO-PROJECT/blob/main/assets/documents/DOC.png)   
- 🔧**How I Built My Portfolio** 
+![PREVIEW]()   
+ 🔧**How I Built Cosmic Counter X** 
 ---
 *Tools and Technologies Used*
 
@@ -55,6 +57,8 @@
  
 - ```Git```:  To track my progress.
 
+- ```FL Studio``` :  To create and enhance audio tracks for a more original acoustic.
+
 
 🚀 **How to Run the Project**  
 ---
@@ -64,14 +68,14 @@
 
 1. Bash and copy code
 
-2. git clone https://github.com/VuesseEDM/PORTFOLIO-PROJECT.git   
+2. git clone   
 
 3. Open the Project in Visual Studio Code   
 
 4. Bash and copy code   
 
 
-5.  Code and view your portfolio   
+5.  Code and view your MINI-GAME   
 
 6. Open the index.html file in your preferred browser   
 
@@ -92,4 +96,4 @@
 
 🙌 **Thanks for Visiting!**
 
-> I hope you find my portfolio interesting. If you have any questions or feedback, feel free to contact me. Thank you for your visit!  👽
+> "I hope you enjoyed my first mini-game made with JavaScript, and if you remember me, I guarantee I'll make more fun projects." If you have any questions or feedback, feel free to contact me. Thank you for your visit!  👽
