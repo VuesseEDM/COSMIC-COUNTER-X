@@ -9,7 +9,7 @@
 
 *Welcome to my Personal Portfolio!* 🚀     
 👉 [PDF](https://github.com/VuesseEDM/PORTFOLIO-PROJECT/blob/main/assets/documents/Portfolio.pdf)    
-👉 [My Website](https://vuesseedm.github.io/PORTFOLIO-PROJECT/)       
+👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)      
 
 
 
