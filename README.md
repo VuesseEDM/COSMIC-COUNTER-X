@@ -5,7 +5,7 @@
  
 
 *This is my first mini-game with Javascript!* 🚀     
-👉 [PDF]()    
+👉 [Introduction](https://github.com/VuesseEDM/COSMIC-COUNTER-X/bob/main/assets/document/Progetto%20JavaScript%20Basics%20di%20Vincenzo%20Sorrentino.pdf)    
 👉 [Game](https://vuesseedm.github.io/COSMIC-COUNTER-X/)    
 
 *RULES OF THE GAME* 📖    
@@ -30,7 +30,7 @@
 |--🌐index.html      
 ---
 
- ## ⤵️  Preview  
+ ## ⤵️  Preview Devices  
 
 ![PREVIEW](https://raw.githubusercontent.com/VuesseEDM/COSMIC-COUNTER-X/main/assets/document/copertina.png)   
  🔧**How I Built Cosmic Counter X** 
