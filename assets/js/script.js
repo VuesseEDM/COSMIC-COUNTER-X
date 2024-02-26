@@ -24,6 +24,9 @@ const displayNumber = document.createElement('p');
 const buttonsContainer = document.createElement('div');
 const plusButton = createButton('+');
 const minusButton = createButton('-');
+const resetButton = createButton('Reset');
+const timerButton = createButton('Go Timer');
+const timerDisplay = document.createElement('p');
 
 // Impostazione degli attributi e testo per gli elementi
 displayNumberBox.setAttribute('class', 'displayNumberBox');
@@ -32,13 +35,9 @@ displayNumber.textContent = '0';
 buttonsContainer.setAttribute('class', 'buttonsContainer');
 plusButton.setAttribute('id', 'segnoPiu');
 minusButton.setAttribute('id', 'segnoMeno');
-
-// Aggiunta degli elementi al DOM
-displayNumberBox.appendChild(displayNumber);
-buttonsContainer.appendChild(plusButton);
-buttonsContainer.appendChild(minusButton);
-container.appendChild(displayNumberBox);
-container.appendChild(buttonsContainer);
+resetButton.setAttribute('id', 'resetButton');
+timerButton.setAttribute('id', 'timerButton');
+timerDisplay.setAttribute('id', 'timerDisplay');
 
 // Aggiunta displayNumberBox sopra resetButtonBox
 container.insertBefore(displayNumberBox, document.querySelector('.resetButtonBox'));
@@ -46,11 +45,15 @@ container.insertBefore(displayNumberBox, document.querySelector('.resetButtonBox
 // Aggiunta buttonsContainer sopra resetButtonBox
 container.insertBefore(buttonsContainer, document.querySelector('.resetButtonBox'));
 
+// Aggiunta degli elementi al DOM
+displayNumberBox.appendChild(displayNumber);
+buttonsContainer.appendChild(plusButton);
+buttonsContainer.appendChild(minusButton);
+container.appendChild(resetButton);
+container.appendChild(timerButton);
+container.appendChild(timerDisplay); // Aggiunta del display del timer
 
 // Ottiene riferimenti agli elementi HTML
-const reset = document.getElementById('resetButton');
-const timer = document.getElementById('timerButton');
-const timerDisplay = document.getElementById('timerDisplay');
 const audioGoTimer = document.getElementById("audioGoTimer");
 const piuSound = document.getElementById("piuSound");
 const menoSound = document.getElementById("menoSound");
@@ -59,6 +62,7 @@ const regola = document.getElementById('regola');
 const mostraRegola = document.getElementById('mostraRegola');
 const regolaSound = document.getElementById('regolaSound');
 const victorySound = document.getElementById('victorySound');
+const timeUpSound = document.getElementById('timeUpSound');
 
 // Event delegation per i pulsanti di incremento e decremento
 buttonsContainer.addEventListener('click', function (event) {
@@ -81,17 +85,21 @@ buttonsContainer.addEventListener('click', function (event) {
 });
 
 // Evento click per il pulsante di reset
-reset.addEventListener('click', function () {
-  resetta();
-  resetBtn.currentTime = 0;
-  resetBtn.play();
+container.addEventListener('click', function (event) {
+  if (event.target === resetButton) {
+    resetta();
+    resetBtn.currentTime = 0;
+    resetBtn.play();
+  }
 });
 
 // Evento click per il pulsante del timer
-timer.addEventListener('click', function () {
-  avviaTimer();
-  audioGoTimer.currentTime = 0;
-  audioGoTimer.play();
+container.addEventListener('click', function (event) {
+  if (event.target === timerButton) {
+    avviaTimer();
+    audioGoTimer.currentTime = 0;
+    audioGoTimer.play();
+  }
 });
 
 // Evento click per il pulsante della regola
@@ -159,10 +167,10 @@ function avviaTimer() {
       if (counter < 100) {
         alert("You didn't reach 100 within the time limit. Counter reset.");
         resetta();
-
-          // Riproduce il suono di avviso
+        // Riproduce il suono di avviso
         timeUpSound.currentTime = 0;
         timeUpSound.play()
+
       }
     }
   }, 1000);
