@@ -159,6 +159,10 @@ function avviaTimer() {
       if (counter < 100) {
         alert("You didn't reach 100 within the time limit. Counter reset.");
         resetta();
+
+          // Riproduce il suono di avviso
+        timeUpSound.currentTime = 0;
+        timeUpSound.play()
       }
     }
   }, 1000);
