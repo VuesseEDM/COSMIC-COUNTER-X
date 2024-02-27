@@ -1,11 +1,3 @@
-// Variabili globali
-let counter = 0;
-let intervallo;
-let miglioreTempo = localStorage.getItem('miglioreTempo') || Infinity;
-let startTime; // Variabile per tenere traccia dell'inizio del timer
-let timerButtonDisabled = false; // Flag per disabilitare il pulsante del timer durante il conteggio
-let isMostraRegolaVisible = false; // Flag per la visibilità della regola
-
 // Funzione che si attiva quando la finestra è completamente caricata
 window.onload = function () {
   // Avvio dell'audio
@@ -15,44 +7,49 @@ window.onload = function () {
   });
   // Aggiornamento del miglior tempo
   updateBestTimeElement();
-};
+}
 
-// Creazione degli elementi HTML
+// Variabili globali
+let counter = 0;
+let intervallo;
+let miglioreTempo = localStorage.getItem('miglioreTempo') || Infinity;
+let startTime; // Variabile per tenere traccia dell'inizio del timer
+let timerButtonDisabled = false; // Flag per disabilitare il pulsante del timer durante il conteggio
+let isMostraRegolaVisible = false; // Flag per la visibilità della regola
+
+
+function createDOMElement(tagName, className, innerHTML, id) {
+  const element = document.createElement(tagName);
+  if (className) {
+    element.setAttribute('class', className);
+  }
+  if (id) {
+    element.setAttribute('id', id);
+  }
+  if (innerHTML) {
+    element.innerHTML = innerHTML;
+  }
+  return element;
+}
+// Creazione degli elementi HTML utilizzando la funzione createDOMElement
 const container = document.querySelector('.container');
-const displayNumberBox = document.createElement('div');
-const displayNumber = document.createElement('p');
-const buttonsContainer = document.createElement('div');
-const plusButton = createButton('+');
-const minusButton = createButton('-');
-const resetButton = createButton('Reset');
-const timerButton = createButton('Go Timer');
-const timerDisplay = document.createElement('p');
-
-// Impostazione degli attributi e testo per gli elementi
-displayNumberBox.setAttribute('class', 'displayNumberBox');
-displayNumber.setAttribute('id', 'displayNumber');
-displayNumber.textContent = '0';
-buttonsContainer.setAttribute('class', 'buttonsContainer');
-plusButton.setAttribute('id', 'segnoPiu');
-minusButton.setAttribute('id', 'segnoMeno');
-resetButton.setAttribute('id', 'resetButton');
-timerButton.setAttribute('id', 'timerButton');
-timerDisplay.setAttribute('id', 'timerDisplay');
-
-// Aggiunta displayNumberBox sopra resetButtonBox
-container.insertBefore(displayNumberBox, document.querySelector('.resetButtonBox'));
-
-// Aggiunta buttonsContainer sopra resetButtonBox
-container.insertBefore(buttonsContainer, document.querySelector('.resetButtonBox'));
-
+const displayNumberBox = createDOMElement('div', 'displayNumberBox');
+const displayNumber = createDOMElement('p', '', '0', 'displayNumber');
+const buttonsContainer = createDOMElement('div', 'buttonsContainer');
+const plusButton = createDOMElement('button', '', '+', 'segnoPiu');
+const minusButton = createDOMElement('button', '', '-', 'segnoMeno');
+const resetButton = createDOMElement('button', '', 'Reset', 'resetButton');
+const timerButton = createDOMElement('button', '', 'Go Timer', 'timerButton');
+const timerDisplay = createDOMElement('p', '', '', 'timerDisplay');
 // Aggiunta degli elementi al DOM
+container.insertBefore(displayNumberBox, document.querySelector('.resetButtonBox'));
+container.insertBefore(buttonsContainer, document.querySelector('.resetButtonBox'));
 displayNumberBox.appendChild(displayNumber);
 buttonsContainer.appendChild(plusButton);
 buttonsContainer.appendChild(minusButton);
 container.appendChild(resetButton);
 container.appendChild(timerButton);
-container.appendChild(timerDisplay); // Aggiunta del display del timer
-
+container.appendChild(timerDisplay);
 // Ottiene riferimenti agli elementi HTML
 const audioGoTimer = document.getElementById("audioGoTimer");
 const piuSound = document.getElementById("piuSound");
@@ -64,11 +61,12 @@ const regolaSound = document.getElementById('regolaSound');
 const victorySound = document.getElementById('victorySound');
 const timeUpSound = document.getElementById('timeUpSound');
 
-// Event delegation per i pulsanti di incremento e decremento
-buttonsContainer.addEventListener('click', function (event) {
-  // Verifica se il clic è avvenuto su un pulsante
-  if (event.target.matches('button')) {
-    // Verifica quale pulsante è stato cliccato
+
+
+// Gestore degli eventi per tutti i pulsanti all'interno del container
+// Evento click per tutti i pulsanti all'interno del container
+container.addEventListener('click', function (event) {
+  if (event.target.tagName === 'BUTTON') { // Assicura che l'elemento cliccato sia un pulsante
     switch (event.target.id) {
       case 'segnoPiu':
         incrementa();
@@ -80,25 +78,17 @@ buttonsContainer.addEventListener('click', function (event) {
         menoSound.currentTime = 0;
         menoSound.play();
         break;
+      case 'resetButton':
+        resetta();
+        resetBtn.currentTime = 0;
+        resetBtn.play();
+        break;
+      case 'timerButton':
+        avviaTimer();
+        audioGoTimer.currentTime = 0;
+        audioGoTimer.play();
+        break;
     }
-  }
-});
-
-// Evento click per il pulsante di reset
-container.addEventListener('click', function (event) {
-  if (event.target === resetButton) {
-    resetta();
-    resetBtn.currentTime = 0;
-    resetBtn.play();
-  }
-});
-
-// Evento click per il pulsante del timer
-container.addEventListener('click', function (event) {
-  if (event.target === timerButton) {
-    avviaTimer();
-    audioGoTimer.currentTime = 0;
-    audioGoTimer.play();
   }
 });
 
@@ -110,33 +100,24 @@ regola.addEventListener('click', function () {
   mostraRegola.style.display = isMostraRegolaVisible ? 'block' : 'none';
 });
 
-// Funzione per creare pulsanti
-function createButton(text) {
-  const button = document.createElement('button');
-  button.textContent = text;
-  return button;
-}
 
 // Funzione per aggiornare il numero visualizzato
 function tabellone() {
   displayNumber.textContent = counter;
 }
-
 // Funzione per incrementare il contatore
 function incrementa() {
   counter++;
   tabellone();
   checkWinCondition();
 }
-
 // Funzione per decrementare il contatore
 function decrementa() {
   if (counter > 0) {
     counter--;
     tabellone();
   }
-}
-
+};
 // Funzione per reimpostare il gioco
 function resetta() {
   counter = 0;
@@ -147,7 +128,6 @@ function resetta() {
     timerDisplay.textContent = "00 : 15";
   }
 }
-
 // Funzione per avviare il timer
 function avviaTimer() {
   if (timerButtonDisabled) {
@@ -170,12 +150,10 @@ function avviaTimer() {
         // Riproduce il suono di avviso
         timeUpSound.currentTime = 0;
         timeUpSound.play()
-
       }
     }
   }, 1000);
 }
-
 // Funzione per verificare se è stata raggiunta la condizione di vittoria
 function checkWinCondition() {
   if (counter === 100) {
@@ -194,7 +172,6 @@ function checkWinCondition() {
     resetta();
   }
 }
-
 // Funzione per aggiornare l'elemento del miglior tempo
 function updateBestTimeElement() {
   let tempo = localStorage.getItem('miglioreTempo');
