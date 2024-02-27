@@ -98,6 +98,7 @@ body {
   border-radius: 30px;
   box-shadow: 0 0 20px rgba(40, 0, 0, 0.133);
   padding: 15px 160px;
+  width: 85%;
 }
 
 #video {
@@ -237,7 +238,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 #regola {
@@ -283,7 +284,7 @@ body {
 
   #title {
     font-size: 10vw;
-    margin-top: -70px;
+    margin-top: -85px;
     margin-bottom: 22px;
   }
 
@@ -291,7 +292,7 @@ body {
     font-size: 4vw;
     max-width: 80%;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
   }
 
   .container {
@@ -345,12 +346,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    margin-top: -5px;
+    width: 270px;
+    margin-top: 42px;
   }
 
   #regola {
-    font-size: 2.3vh;
+    font-size: 2.2vh;
     padding: 5px 10px;
     text-align: center;
     margin-bottom: 5px;
@@ -361,7 +362,8 @@ body {
   }
 
   #mostraRegola {
-    font-size: 2vh;
+    margin-top: 5px;
+    font-size: 1.7vh;
     text-align: center;
     color: white;
     text-shadow: 1px 3px black;
@@ -432,6 +434,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 530px;
+    margin-top: 20px;
   }
 
   #regola {
@@ -510,7 +513,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
+    width: 600px;
   }
 
   #regola {
