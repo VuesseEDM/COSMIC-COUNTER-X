@@ -50,6 +50,7 @@ buttonsContainer.appendChild(minusButton);
 container.appendChild(resetButton);
 container.appendChild(timerButton);
 container.appendChild(timerDisplay);
+
 // Ottiene riferimenti agli elementi HTML
 const audioGoTimer = document.getElementById("audioGoTimer");
 const piuSound = document.getElementById("piuSound");
@@ -60,8 +61,6 @@ const mostraRegola = document.getElementById('mostraRegola');
 const regolaSound = document.getElementById('regolaSound');
 const victorySound = document.getElementById('victorySound');
 const timeUpSound = document.getElementById('timeUpSound');
-
-
 
 // Gestore degli eventi per tutti i pulsanti all'interno del container
 // Evento click per tutti i pulsanti all'interno del container
