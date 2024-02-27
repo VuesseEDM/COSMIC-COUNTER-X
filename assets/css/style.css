@@ -296,7 +296,7 @@ body {
   }
 
   .container {
-    padding: 62px 60px;
+    padding: 52px 60px;
   }
 
   #video {
@@ -362,7 +362,7 @@ body {
   }
 
   #mostraRegola {
-    margin-top: 5px;
+    margin-top: 20px;
     font-size: 1.7vh;
     text-align: center;
     color: white;
