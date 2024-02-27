@@ -131,16 +131,15 @@ function avviaTimer() {
   resetta();
   startTime = Date.now(); // Memorizza il tempo di inizio
   let secondiMancanti = 15;
-  timerDisplay.textContent = `00 : ${secondiMancanti < 10 ? '00' + secondiMancanti : secondiMancanti}`;
+  timerDisplay.textContent = `00 : ${secondiMancanti < 10 ? '0' + secondiMancanti : secondiMancanti}`;
   intervallo = setInterval(function () {
     secondiMancanti--;
-    timerDisplay.textContent = `${Math.floor(secondiMancanti / 60)} : ${secondiMancanti % 60 < 10 ? '00' + secondiMancanti % 60 : secondiMancanti % 60}`;
+    timerDisplay.textContent = `${Math.floor(secondiMancanti / 60)} : ${secondiMancanti % 60 < 10 ? '0' + secondiMancanti % 60 : secondiMancanti % 60}`;
     if (secondiMancanti === 0) {
-      timerDisplay.textContent = `TIME EXPIRED`;
       clearInterval(intervallo);
+      timerDisplay.textContent = `TIME EXPIRED`;
       if (counter < 100) {
         alert("You didn't reach 100 within the time limit. Counter reset.");
-        timerDisplay.textContent = `TIME EXPIRED`;
         resetta();
         // Riproduce il suono di avviso
         timeUpSound.currentTime = 0;
@@ -158,10 +157,9 @@ function checkWinCondition() {
     victorySound.currentTime = 0;
     victorySound.play();
     let tempoTrascorso = Date.now() - startTime;
-    if (tempoTrascorso < miglioreTempo) {
+    if (tempoTrascorso < miglioreTempo && tempoTrascorso <= 15000) {
       miglioreTempo = tempoTrascorso;
       localStorage.setItem('miglioreTempo', miglioreTempo);
-      timerDisplay.textContent = `NEW BEST TIME RECORD!`;
       alert("New best time record!");
       updateBestTimeElement();
     }
@@ -183,3 +181,4 @@ function updateBestTimeElement() {
     bestTimeElement.textContent = 'NO BEST TIME YET';
   }
 }
+
