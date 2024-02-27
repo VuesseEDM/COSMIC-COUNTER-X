@@ -41,6 +41,10 @@ const minusButton = createDOMElement('button', '', '-', 'segnoMeno');
 const resetButton = createDOMElement('button', '', 'Reset', 'resetButton');
 const timerButton = createDOMElement('button', '', 'Go Timer', 'timerButton');
 const timerDisplay = createDOMElement('p', '', '', 'timerDisplay');
+const boxRegola = createDOMElement('div', 'animate__animated animate__bounceInDown', '', 'boxRegola');
+const regolaButton = createDOMElement('button', '', 'ONE RULE', 'regola');
+const mostraRegola = createDOMElement('div', '', 'The only rule is to make 100 clicks within 15 seconds. The best time will be shown at the top.', 'mostraRegola');
+
 // Aggiunta degli elementi al DOM
 container.insertBefore(displayNumberBox, document.querySelector('.resetButtonBox'));
 container.insertBefore(buttonsContainer, document.querySelector('.resetButtonBox'));
@@ -50,22 +54,13 @@ buttonsContainer.appendChild(minusButton);
 container.appendChild(resetButton);
 container.appendChild(timerButton);
 container.appendChild(timerDisplay);
-
-// Ottiene riferimenti agli elementi HTML
-const audioGoTimer = document.getElementById("audioGoTimer");
-const piuSound = document.getElementById("piuSound");
-const menoSound = document.getElementById("menoSound");
-const resetBtn = document.getElementById('resetBtn');
-const regola = document.getElementById('regola');
-const mostraRegola = document.getElementById('mostraRegola');
-const regolaSound = document.getElementById('regolaSound');
-const victorySound = document.getElementById('victorySound');
-const timeUpSound = document.getElementById('timeUpSound');
+boxRegola.appendChild(regolaButton);
+boxRegola.appendChild(mostraRegola);
+container.after(boxRegola)
 
 // Gestore degli eventi per tutti i pulsanti all'interno del container
-// Evento click per tutti i pulsanti all'interno del container
 container.addEventListener('click', function (event) {
-  if (event.target.tagName === 'BUTTON') { // Assicura che l'elemento cliccato sia un pulsante
+  if (event.target.tagName === 'BUTTON') {
     switch (event.target.id) {
       case 'segnoPiu':
         incrementa();
@@ -90,7 +85,6 @@ container.addEventListener('click', function (event) {
     }
   }
 });
-
 // Evento click per il pulsante della regola
 regola.addEventListener('click', function () {
   regolaSound.currentTime = 0;
@@ -98,7 +92,6 @@ regola.addEventListener('click', function () {
   isMostraRegolaVisible = !isMostraRegolaVisible;
   mostraRegola.style.display = isMostraRegolaVisible ? 'block' : 'none';
 });
-
 
 // Funzione per aggiornare il numero visualizzato
 function tabellone() {
