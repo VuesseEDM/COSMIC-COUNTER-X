@@ -25,7 +25,7 @@
   <!--STYLE-->
   <link rel="stylesheet" href="assets/css/style.css">
 
- <!--FAVICON-->
+  <!--FAVICON-->
   <link rel="icon" href="https://cdn.pixabay.com/photo/2022/05/14/07/18/alien-7195075_1280.png" type="image/x-icon">
   <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2022/05/14/07/18/alien-7195075_1280.png"
     type="image/x-icon">
@@ -40,27 +40,17 @@
 <body>
 
   <h1 class="animate__animated animate__bounceInDown" id="title">COSMIC COUNTER</h1>
-  <div class="animate__animated animate__bounceInUp" id="bestTime">NO BETTER TIME...</div>
+  <div id="bestTime">NO BETTER TIME...</div>
   <video id="video" autoplay muted loop>
     <source src="assets/video/fuoco alieno.mp4" type=" video/mp4" alt="cibo alieno">
     Your browser does not support the video tag.
   </video>
   <!--COSMIC COUNTER-->
-  <div class="container animate__animated animate__backInDown">
+  <div class="container animate__animated animate__backInUp">
     <img id="videoBackground" src="assets/video/giphy.webp" alt="alien dance" title="alien dance">
 
-    <p id="timerDisplay"></p>
   </div>
   </div>
-
-  <!--RULE-->
-  <div id="boxRegola">
-    <button class="animate__animated animate__bounceInUp" id="regola">ONE RULE</button>
-    <div id="mostraRegola">
-      "The only rule is to make 100 clicks within 15 seconds. The best time will be shown at the top."
-    </div>
-  </div>
-
 
   <!--AUDIO-->
   <audio id="musica" src="assets/audio/tema.mp3" autoplay loop></audio>
@@ -71,8 +61,6 @@
   <audio id="timeUpSound" src="assets/audio/stopGioco.mp3"></audio>
   <audio id="victorySound" src="assets/audio/vittoria.mp3"></audio>
   <audio id="regolaSound" src="assets/audio/regola.mp3"></audio>
-
-
 
   <!--JS-->
   <script src="assets/js/script.js"></script>
