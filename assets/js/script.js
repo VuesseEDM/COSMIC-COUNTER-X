@@ -131,14 +131,14 @@ function avviaTimer() {
   resetta();
   startTime = Date.now(); // Memorizza il tempo di inizio
   let secondiMancanti = 15;
-  timerDisplay.textContent = `00 : ${secondiMancanti < 10 ? '0' + secondiMancanti : secondiMancanti}`;
+  timerDisplay.textContent = `00 : ${secondiMancanti < 10 ? '00' + secondiMancanti : secondiMancanti}`;
   intervallo = setInterval(function () {
     secondiMancanti--;
     timerDisplay.textContent = `${Math.floor(secondiMancanti / 60)} : ${secondiMancanti % 60 < 10 ? '0' + secondiMancanti % 60 : secondiMancanti % 60}`;
     if (secondiMancanti === 0) {
-      clearInterval(intervallo);
-      timerDisplay.textContent = `TIME EXPIRED`;
+      clearInterval(intervallo);
       if (counter < 100) {
+        timerDisplay.textContent = `TIME EXPIRED`;
         alert("You didn't reach 100 within the time limit. Counter reset.");
         resetta();
         // Riproduce il suono di avviso
