@@ -157,7 +157,7 @@ function checkWinCondition() {
     victorySound.currentTime = 0;
     victorySound.play();
     let tempoTrascorso = Date.now() - startTime;
-    if (tempoTrascorso < miglioreTempo && tempoTrascorso <= 15000) {
+    if (tempoTrascorso < miglioreTempo) {
       miglioreTempo = tempoTrascorso;
       localStorage.setItem('miglioreTempo', miglioreTempo);
       alert("New best time record!");
