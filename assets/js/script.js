@@ -8,8 +8,6 @@ window.onload = function () {
   // Aggiornamento del miglior tempo
   updateBestTimeElement();
 }
-
-
 // Variabili globali
 let counter = 0;
 let intervallo;
@@ -17,8 +15,6 @@ let miglioreTempo = localStorage.getItem('miglioreTempo') || Infinity;
 let startTime; // Variabile per tenere traccia dell'inizio del timer
 let timerButtonDisabled = false; // Flag per disabilitare il pulsante del timer durante il conteggio
 let isMostraRegolaVisible = false; // Flag per la visibilità della regola
-
-
 
 // Creazione degli elementi HTML utilizzando la funzione createDOMElement
 function createDOMElement(tagName, className, innerHTML, id) {
@@ -59,7 +55,6 @@ container.appendChild(boxRegola);
 boxRegola.appendChild(regolaButton);
 boxRegola.appendChild(mostraRegola);
 
-
 // Gestore degli eventi per tutti i pulsanti all'interno del container
 container.addEventListener('click', function (event) {
   if (event.target.tagName === 'BUTTON') {
@@ -93,8 +88,6 @@ container.addEventListener('click', function (event) {
     }
   }
 });
-
-
 // Funzione per aggiornare il numero visualizzato
 function tabellone() {
   displayNumber.textContent = counter;
@@ -181,5 +174,3 @@ function updateBestTimeElement() {
     bestTimeElement.textContent = 'NO BEST TIME YET';
   }
 }
-
-
